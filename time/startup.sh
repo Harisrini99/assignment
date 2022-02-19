@@ -1,0 +1,1 @@
+eval sh /time/cron.sh > /time/pglogs &
