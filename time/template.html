@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<title>Time</title>
+</head>
+
+<body>
+    <p id="time"></p>
+	<script type="text/javascript">
+			var epoch = $TIME;
+			var date = new Date(0);
+			date.setUTCSeconds(epoch);
+			let localzone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+			let time = date.toLocaleString("en-US", { timeZone: localzone, hour12: false,hour: 'numeric'});
+			document.getElementById('time').innerHTML = time;
+            console.log("Current Zone - " + localzone);
+            console.log("IST Foramt" + date);
+	</script>
+</body>
+
+</html>
