@@ -13,6 +13,7 @@
 			date.setUTCSeconds(epoch);
 			let localzone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 			let time = date.toLocaleString("en-US", { timeZone: localzone, hour12: false,hour: 'numeric'});
+			time = time%24;
 			document.getElementById('time').innerHTML = time;
             console.log("Current Zone - " + localzone);
             console.log("Last Updated Time - " + date);
