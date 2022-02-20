@@ -16,8 +16,11 @@ This repo contains files, scripts and dockerfile which will show the hour of the
 - Startup script will first schedule the cron job to run every hour and in the background it will run a cron script which will create index html with current Epoch Time in IST Format using template html file.
 - Index html will have the Epoch time in IST format, and when the user tries to access the this page, it will fetch the local timezone and convert the epoch into local timezone time.
 - Cron job will be running once in every hour, which will get the current epoch time in IST format and start the sleep timer to change the time after 15th,30th and 45th minute.Since the time will be changing for every 15 minutes in different timezone, we are running this sleep timer to update.
-### How to run
 
+### How to run
 ```
 docker run -p 8080:80  docker.io/harisrini99/multizone_parallel:stable
 ```
+
+### How to test
+- open a browser and type http://localhost:8080, you will see the current hour according to local timezone.
